@@ -1,0 +1,112 @@
+body {
+	font-family: Helvetica, sans-serif;
+}
+
+
+h1, h2 {
+ 	letter-spacing: .25em;
+ 	color: #333333;
+}
+
+p {
+ 	letter-spacing: .125em;
+ 	color: #888888;
+ 	font-weight: 300;
+ 	font-size: 16px;
+ 	line-height: 2em;
+}
+
+.mb-40 {
+	margin-bottom: 40px;
+}
+
+.container {
+	max-width: 900px;
+}
+
+.container.spaced {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.jumbotron {
+	/*background-image: url("../img/hero.jpg");*/
+	/*background-position: center center;*/
+	/*background-size: cover;*/
+	background-color: #023b58;
+
+ 	letter-spacing: .25em;
+}
+
+.jumbotron h2, .jumbotron p, .jumbotron i,
+.dark-bg h2, .dark-bg p, .dark-bg i {
+	color: white;
+}
+
+.chamada{
+	margin: 50px auto 30px;
+}
+
+.babylon-logo {
+	margin-top: 50px;
+	width: 80%;
+}
+
+.jumbotron i {
+	/*font-family: 'Bitter', serif;*/
+}
+
+.dark-bg {
+	background-color: #935625;
+	color: white;
+}
+
+.table	{
+	margin: 0;
+	padding: 0;
+	border-spacing: 0;
+
+	display: table;
+}
+
+.table-row	{
+	display: table-row;
+}
+
+.table-cell	{
+	display: table-cell;
+}
+
+.beer-photo {
+	width: 400px;
+	height: 100%;
+	background-image: url("../img/capunga_lager.jpg");
+	background-size: cover;
+	background-position: center center;
+}
+
+.beer-description {
+	padding: 50px;
+}
+
+@media(max-width:480px) {
+  h1 {
+  	font-size: 22px;
+  }
+	
+	h2 {
+  	font-size: 18px;
+  }
+
+	p {
+  	font-size: 14px;
+  }
+
+  .beer-photo{
+    display: none;
+  }
+
+  .container, .beer-description {
+  	text-align: center;
+  }
+}
