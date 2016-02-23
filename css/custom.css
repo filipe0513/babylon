@@ -4,16 +4,14 @@ body {
 
 
 h1, h2 {
- 	letter-spacing: .25em;
  	color: #333333;
 }
 
 p {
- 	letter-spacing: .125em;
- 	color: #888888;
+ 	color: #666666;
  	font-weight: 300;
  	font-size: 16px;
- 	line-height: 2em;
+ 	line-height: 1.75em;
 }
 
 .mb-40 {
@@ -40,6 +38,7 @@ p {
 
 .jumbotron h2, .jumbotron p, .jumbotron i,
 .dark-bg h2, .dark-bg p, .dark-bg i {
+ 	font-weight: 300;
 	color: white;
 }
 
@@ -50,10 +49,15 @@ p {
 .babylon-logo {
 	margin-top: 50px;
 	width: 80%;
+	max-width: 600px;
 }
 
 .jumbotron i {
 	/*font-family: 'Bitter', serif;*/
+}
+
+.hr-small {
+	width: 80%;
 }
 
 .dark-bg {
