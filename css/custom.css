@@ -28,9 +28,9 @@ p {
 }
 
 .jumbotron {
-	/*background-image: url("../img/hero.jpg");*/
-	/*background-position: center center;*/
-	/*background-size: cover;*/
+	background-image: url("../imgs/babylon-bg.jpg");
+	background-position: center center;
+	background-size: cover;
 	background-color: #023b58;
 
  	letter-spacing: .25em;
@@ -91,6 +91,29 @@ p {
 
 .beer-description {
 	padding: 50px;
+}
+
+.social-links {
+	list-style: none;
+	margin: 0;
+	margin-bottom: 40px;
+	padding: 0;
+}
+
+.social-links a:hover {
+	text-decoration: none;
+}
+
+.social-links li {
+	display: inline-block;	
+	padding: 10px 20px; 
+	margin: 10px;
+	border: 1px solid;
+	border-radius: 5px; 
+}
+
+.social-links li i {
+	padding-bottom: 5px; 
 }
 
 @media(max-width:480px) {
