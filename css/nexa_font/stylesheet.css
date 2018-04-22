@@ -1,0 +1,13 @@
+/* Bold */
+@font-face {
+    font-family: 'Nexa';
+    src: url('Nexa-Black.otf')  format('opentype');
+    font-weight: 700;
+}
+
+/* Thin */
+@font-face {
+    font-family: 'Nexa';
+    src: url('Nexa-Thin.otf') format('opentype');
+    font-weight: 100;
+}

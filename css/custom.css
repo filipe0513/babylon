@@ -4,6 +4,9 @@ body {
 
 
 h1, h2 {
+	font-family: "Nexa";
+	font-weight: 700;
+  letter-spacing: 0;
  	color: #333333;
 }
 
@@ -47,8 +50,20 @@ address {
 	color: white;
 }
 
-.chamada{
+.chamada {
 	margin: 50px auto 30px;
+}
+
+.chamada h2 {
+	font-weight: 700;
+}
+
+.chamada i{
+	font-family: "Nexa";
+	font-weight: 100;
+  letter-spacing: 0;
+	font-style: normal;
+	font-size: 20px;
 }
 
 .babylon-logo {
@@ -95,7 +110,7 @@ address {
 
 
 .card-header.mc-cf {
-	background: url("../imgs/clients/bg-mc-cf.jpg") center center;
+	background: url("../imgs/clients/bg-extrabom.jpg") center center;
 	background-size: cover;
 }
 
@@ -118,6 +133,10 @@ address {
 }
 
 .card-title {
+	font-family: "Nexa";
+	font-weight: 100;
+	letter-spacing: 0;
+
 	border-radius: 5px 5px 0 0;
 
 	padding: 20px 10px;
@@ -178,6 +197,60 @@ address {
 	padding-bottom: 5px; 
 }
 
+.calculator {
+  width: 80%;
+  margin: 50px auto;
+  font-family: "Nexa";
+  font-style: normal;
+  color: white;
+}
+
+.calculator h2 {
+	font-weight: 700;
+}
+
+.calculator label {
+	font-weight: 100;
+  letter-spacing: 0;
+  font-size: 20px;
+}
+
+.calculator input {
+  font-size: 20px;
+  height: auto;
+}
+
+.calculator input[placeholder] {
+	font-style: italic;
+}
+
+.calculator .form-group {
+	margin-bottom: 30px;
+}
+
+.calculator button {
+	background-color: #337ABA;
+	padding: 15px 30px;
+}
+
+#result {
+	color: #F49627;
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.hidden {
+	display: none;
+}
+
+.resposta a {
+	color: #F49627;
+	text-decoration: none;
+}
+
+.resposta a:hover {
+	text-decoration: underline;
+}
 
 @media(max-width:480px) {
   h1 {
