@@ -17,6 +17,10 @@ p {
  	line-height: 1.75em;
 }
 
+p.small { 
+ 	font-size: 14px;
+}
+
 address {
 	color: #666666;
  	font-weight: 300;
@@ -251,6 +255,7 @@ address {
 .resposta a:hover {
 	text-decoration: underline;
 }
+
 
 @media(max-width:480px) {
   h1 {

@@ -38,7 +38,7 @@
         
         <form action="javascript:calcChopp()" method="POST">
           <div class="form-group row">
-            <label for="inputQnt" class="col-sm-6 col-form-label">Quantas pessoas vão tomar chopp?</label>
+            <label for="inputQnt" class="col-sm-6 col-form-label">Quantas pessoas?</label>
             <div class="col-sm-6">
               <input type="number" class="form-control" id="inputQnt" placeholder="10 pessoas">
             </div>
@@ -75,8 +75,11 @@
           </div>
 
           <div class="resposta hidden">
-            Você precisará de <span id="result"></span> de chopp para o seu evento!
+            <p class="small">Você precisará de <span id="result"></span> de chopp para o seu evento!</p>
             <h2>Solicite seu orçamento agora: <a href="callto:8134716046">(81) 3471-6046</a></h2>
+            <p class="hidden small" id="longo">PS: seu evento é um caso especial pela duração, talvez seja melhor batermos um papo antes de fecharmos.</p>
+            <p class="hidden small" id="lotado">PS: seu evento é um caso especial pela quantidade gente, talvez seja melhor batermos um papo antes de fecharmos.</p>
+            <p class="hidden small" id="especial">PS: seu evento é um caso especial pela quantidade de gente e duração, talvez seja melhor batermos um papo antes de fecharmos.</p>
           </div>
         </form>
       </div>
@@ -116,18 +119,53 @@
         inputHora = $('#inputHora').val();
         inputBeb = $('input[name=gridRadios]:checked').val();
 
-        // k = litros por pessoa por hora
-        if (parseInt(inputBeb) == 1) {
-          k = 0.3;
-        } else {
-          k = 0.5;
-        }
+        // lph = litros por pessoa por hora
+        lph = 0.5
+
 
         if(inputQnt * inputHora == 0) {
           alert("Preencha todos os campos para calcularmos o volume corretamente.");
         } else {
 
-          qntChopp = inputQnt * inputHora * k;
+          lotado = false;
+          longo = false;
+
+          // k = fator multiplicativo de convidados que bebem
+          if (inputQnt <= 13) {
+            k = 1;    
+          } else if (inputQnt <= 36) {
+            k = 0.75;
+          } else {
+            lotado = true;
+            k = 0.5;
+          }
+
+          if (parseInt(inputBeb) == 1) {
+            k = k * 0.66
+          }
+
+          if (inputHora >= 4) {
+            inputHora = 4;
+            if (inputHora >= 6) {
+              longo = true;
+            }
+          }
+
+          $("#especial").addClass('hidden');
+          $("#longo").addClass('hidden');
+          $("#lotado").addClass('hidden');
+
+          if (longo && lotado) {
+            $("#especial").removeClass('hidden');
+          } else {
+            if (longo) {
+              $("#longo").removeClass('hidden');
+            } else {
+              $("#lotado").removeClass('hidden');
+            }
+          }
+
+          qntChopp = inputQnt * inputHora * lph * k;
 
 
           if (qntChopp <= 40) {
@@ -145,6 +183,7 @@
           
           resposta = $('.resposta');
           resposta.removeClass('hidden');
+
         }
 
       }
