@@ -157,9 +157,10 @@
           if (longo && lotado) {
             $("#especial").removeClass('hidden');
           } else {
-            if (longo == true) {
+            if (longo) {
               $("#longo").removeClass('hidden');
-            } else {
+            } 
+            if (lotado) {
               $("#lotado").removeClass('hidden');
             }
           }
