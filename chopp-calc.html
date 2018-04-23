@@ -115,9 +115,9 @@
     
     <script type="text/javascript">
       function calcChopp(){
-        inputQnt = $('#inputQnt').val();
-        inputHora = $('#inputHora').val();
-        inputBeb = $('input[name=gridRadios]:checked').val();
+        inputQnt = parseInt($('#inputQnt').val());
+        inputHora = parseInt($('#inputHora').val());
+        inputBeb = parseInt($('input[name=gridRadios]:checked').val());
 
         // lph = litros por pessoa por hora
         lph = 0.5
@@ -129,6 +129,9 @@
 
           lotado = false;
           longo = false;
+          $("#especial").addClass('hidden');
+          $("#longo").addClass('hidden');
+          $("#lotado").addClass('hidden');
 
           // k = fator multiplicativo de convidados que bebem
           if (inputQnt <= 13) {
@@ -140,25 +143,21 @@
             k = 0.5;
           }
 
-          if (parseInt(inputBeb) == 1) {
+          if (inputBeb == 1) {
             k = k * 0.66
           }
 
           if (inputHora >= 4) {
-            inputHora = 4;
             if (inputHora >= 6) {
               longo = true;
             }
+            inputHora = 4;
           }
-
-          $("#especial").addClass('hidden');
-          $("#longo").addClass('hidden');
-          $("#lotado").addClass('hidden');
 
           if (longo && lotado) {
             $("#especial").removeClass('hidden');
           } else {
-            if (longo) {
+            if (longo == true) {
               $("#longo").removeClass('hidden');
             } else {
               $("#lotado").removeClass('hidden');
